@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="6dp"
+    android:background="@drawable/item_bg"
+    android:layout_marginBottom="6dp">
+
+    <TextView
+        android:id="@+id/urlTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="13sp"
+        android:padding="8dp"
+        android:ellipsize="end"
+        android:maxLines="2" />
+
+</LinearLayout>
