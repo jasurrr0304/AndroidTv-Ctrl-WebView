@@ -377,6 +377,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadDefaultUrls() {
         urlList.addAll(listOf(
+            "https://www.youtube.com/results?search_query=peliculas+gratis",
+            "https://www.youtube.com/results?search_query=peliculas+dominio+publico",
             "https://doramasflix.co",
             "https://ww3.gnulahd.nu",
             "https://www.rojadirectaenvivo.pl",
@@ -386,23 +388,12 @@ class MainActivity : AppCompatActivity() {
             "https://www.vix.com/es",
             "https://www.nuestra.tv",
             "https://doramasflix.io",
-            "https://www.rtve.es/play",
             "https://canela.tv",
-            "https://chatgpt.com",
-            "https://www.youtube.com/movies",
             "https://radio.garden",
-            "https://www.earthcam.com",
             "https://artvee.com",
-            "https://tv.garden",
-            "https://www.youtube.com/c/PokemonTV",
             "https://play.mercadolibre.com.mx/",
-            "https://agar.io",
             "https://skribbl.io",
-            "https://www.catanuniverse.com/web",
             "https://www.chess.com/play/online",
-            "https://poki.com",
-            "https://jackbox.tv",
-            "https://www.crazygames.com/es",
             "https://es.y8.com"
         ))
     }

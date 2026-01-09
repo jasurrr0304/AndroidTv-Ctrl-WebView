@@ -8,9 +8,15 @@ Una aplicación Android optimizada para Smart TVs de bajos recursos que permite 
 - ✅ **Optimizado para Smart TV** - Interfaz diseñada para televisores
 - ✅ **Bajos recursos** - Configuraciones optimizadas para dispositivos con recursos limitados
 - ✅ **WebView completo** - Navegación web completa con JavaScript
+- ✅ **Modo Cursor Virtual** - Navegación con puntero controlado por D-Pad
+- ✅ **Detección inteligente de videos** - Doble clic para pantalla completa
+- ✅ **Múltiples reproductores soportados** - YouTube, HTML5, JW Player, Video.js, Plyr, Flowplayer
+- ✅ **Scroll automático** - Al acercarse a los bordes con el cursor
+- ✅ **User-Agent configurable** - Cambia entre TV, Móvil y Escritorio
 - ✅ **Lista de URLs** - Gestión de múltiples páginas web
 - ✅ **Agregar URLs personalizadas** - Ingreso manual de nuevas direcciones
-- ✅ **Control remoto** - Navegación completa con D-Pad
+- ✅ **Control remoto completo** - Navegación completa con D-Pad y tecla MENÚ
+- ✅ **Bloqueador de anuncios** - Filtrado básico de ads y popups
 - ✅ **Modo landscape** - Optimizado para pantallas horizontales
 
 ## 🚀 Requisitos
@@ -60,32 +66,106 @@ adb connect 192.168.1.XXX:5555
 ./gradlew installDebug
 ```
 
-## 🎮 Uso
+## 🎮 Controles del Control Remoto
 
-### Navegación con Control Remoto
+### 🔑 Tecla Principal
 
-- **← (Izquierda)**: Abrir panel de URLs
-- **→ (Derecha)**: Cerrar panel de URLs
-- **↑↓ (Arriba/Abajo)**: Navegar por la lista de URLs
-- **OK/Enter**: Seleccionar URL o confirmar acción
-- **Back**: Retroceder en el navegador o salir
+- **MENÚ/OPCIONES** ⚙️: Abre/Cierra el panel lateral de URLs y configuración
 
-### Agregar una Nueva URL
+### 📍 Modo Cursor (Activado por defecto)
 
-1. Presiona **← (Izquierda)** para abrir el panel lateral
-2. Usa el control remoto para navegar al campo de texto
-3. Ingresa la URL (automáticamente agrega "https://" si es necesario)
-4. Presiona "Agregar URL"
-5. La página se cargará automáticamente
+El modo cursor permite navegar con un puntero virtual en la pantalla:
+
+#### Navegación Básica
+- **↑↓←→ (D-Pad)**: Mueve el cursor en la pantalla
+- **OK/ENTER (1 clic)**: Hace clic en el elemento bajo el cursor
+- **OK/ENTER (2 clics rápidos)**: 🎬 **Detecta y pone videos en pantalla completa**
+  - Detecta automáticamente videos HTML5
+  - Compatible con YouTube embebido
+  - Soporta reproductores: JW Player, Video.js, Plyr, Flowplayer
+  - Funciona con Vimeo, Dailymotion y otros reproductores
+
+#### Scroll Automático
+- El cursor hace **scroll automático** al acercarse a los bordes de la pantalla
+- Desplazamiento suave y continuo
+
+#### Teclas de Scroll Manual
+- **CANAL ↑ / PAGE UP**: Scroll hacia arriba
+- **CANAL ↓ / PAGE DOWN**: Scroll hacia abajo
+
+### 🎯 Modo Navegación Normal (Sin cursor)
+
+Cuando desactivas el modo cursor desde el panel lateral:
+
+- **↑↓ (Arriba/Abajo)**: Scroll de página
+- **CANAL ↑↓ / PAGE UP/DOWN**: Scroll de página
+- **OK/ENTER**: Navega por elementos enfocables (links, botones)
+- Los elementos enfocados se resaltan con un borde verde brillante
+
+### 📋 Panel Lateral (Menú)
+
+Para acceder al panel lateral presiona **MENÚ/OPCIONES** ⚙️:
+
+#### Botones Disponibles:
+1. **Cursor ON/OFF**: Activa/desactiva el modo cursor
+2. **TV/Móvil/Escritorio**: Cambia el User-Agent
+   - TV: Identifica como Smart TV
+   - Móvil: Identifica como smartphone Android
+   - Escritorio: Identifica como navegador de PC
+3. **Zoom 100%**: Resetea el zoom y vuelve al inicio de la página
+4. **Recargar**: Recarga la página actual
+5. **Agregar URL**: Campo para agregar nuevas URLs
+
+#### Navegación en el Panel:
+- **↑↓ (Arriba/Abajo)**: Navegar entre URLs guardadas
+- **OK/ENTER**: Cargar la URL seleccionada
+- **MENÚ/BACK**: Cerrar el panel y volver a la navegación
+
+### 🎬 Función de Video en Pantalla Completa
+
+La aplicación detecta inteligentemente diferentes tipos de videos:
+
+1. **Videos HTML5** (`<video>` tag)
+2. **YouTube** (iframes embebidos)
+3. **Reproductores populares**:
+   - JW Player
+   - Video.js
+   - Plyr
+   - Flowplayer
+   - Y otros reproductores personalizados
+
+**Cómo usar:**
+1. Mueve el cursor sobre el video
+2. Presiona **OK/ENTER dos veces rápidamente** (doble clic)
+3. El video entrará automáticamente en pantalla completa
+
+### ⬅️ Navegación y Salida
+
+- **BACK**: 
+  - Si el panel está abierto: Cierra el panel
+  - Si hay historial: Retrocede en el navegador
+  - Si no hay historial: Muestra diálogo de salida
+
+### 🎨 Indicadores Visuales
+
+- **Cursor verde**: Tu posición actual en modo cursor
+- **Borde verde**: Elemento bajo el cursor o con foco
+- **Animación del cursor**: 
+  - Pequeño bounce: Clic simple
+  - Bounce grande: Doble clic (intento de fullscreen)
+- **Mensajes Toast**: Confirman acciones realizadas
 
 ### URLs Predefinidas
 
 La aplicación viene con estas URLs por defecto:
-- Google
-- YouTube
-- Wikipedia
-- Netflix
-- Prime Video
+- Doramasflix
+- Gnula HD
+- Roja Directa (deportes)
+- HackStore
+- Pluto TV
+- Plex
+- Canela TV
+- ChatGPT
 
 ## 🔧 Optimizaciones para Bajos Recursos
 
@@ -224,10 +304,17 @@ Para reportar problemas o sugerencias, abre un issue en el repositorio.
 - [x] Navegación con control remoto
 - [x] Optimizaciones de rendimiento
 - [x] Soporte para Smart TV
+- [x] Modo cursor virtual con D-Pad
+- [x] Detección inteligente de videos
+- [x] Pantalla completa con doble clic
+- [x] Scroll automático en bordes
+- [x] User-Agent configurable (TV/Móvil/Escritorio)
+- [x] Bloqueador básico de anuncios
+- [x] Resaltado de elementos enfocados
 - [ ] Gestión de favoritos persistente
 - [ ] Historial de navegación
 - [ ] Modo incógnito
-- [ ] Configuración de zoom
+- [ ] Descarga de archivos
 
 ---
 
