@@ -375,28 +375,12 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = urlAdapter
     }
 
-    private fun loadDefaultUrls() {
+       private fun loadDefaultUrls() {
         urlList.addAll(listOf(
-            "https://www.youtube.com/results?search_query=peliculas+gratis",
-            "https://www.youtube.com/results?search_query=peliculas+dominio+publico",
-            "https://doramasflix.co",
-            "https://ww3.gnulahd.nu",
-            "https://www.rojadirectaenvivo.pl",
-            "https://www.hackstore2.com",
-            "https://pluto.tv/latam",
-            "https://watch.plex.tv/on-demand/category/en-espanol",
-            "https://www.vix.com/es",
-            "https://www.nuestra.tv",
-            "https://doramasflix.io",
-            "https://canela.tv",
-            "https://radio.garden",
-            "https://artvee.com",
-            "https://play.mercadolibre.com.mx/",
-            "https://skribbl.io",
-            "https://www.chess.com/play/online",
-            "https://es.y8.com"
+            "https://softtv.uz/"
         ))
     }
+
 
     private fun addUrl() {
         val url = urlEditText.text.toString().trim()
